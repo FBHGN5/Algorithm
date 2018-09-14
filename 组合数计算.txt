@@ -1,0 +1,25 @@
+public class Main1 {
+    public static double C(long n, long m) {
+        if (n > m) {
+            throw new ArithmeticException("组合数上不能大于下！");
+        }
+        if (n > m / 2) {
+            n = m - n;
+        }
+
+        double s1 = 0;
+        for (long i = m - n + 1; i <= m; i++) {
+            s1 = s1 + Math.log(i);
+
+        }
+        double s2 = 0;
+        for (long i = 2; i <= n; i++) {
+            s2 = s2 + Math.log(i);
+        }
+        return Math.round(Math.exp(s1 - s2));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Main1.C(1, 3111));
+    }
+}

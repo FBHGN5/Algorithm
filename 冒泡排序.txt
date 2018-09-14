@@ -1,0 +1,29 @@
+package org.trade.util;
+/*
+冒泡排序
+ */
+public class Main {
+    public static void sort(int arr[],int length) {
+        boolean flag = true;
+        while (flag) {
+            flag=false;
+            for (int i = 1; i < length; i++) {
+                if (arr[i - 1] > arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i - 1];
+                    arr[i - 1] = temp;
+                    flag=true;
+                    }
+
+            }
+            length--;
+        }
+    }
+    public static void main(String[] args) {
+      int arr[]={3,2,5,1,1,0,-2,1,1,1,1,1,1,1,2,2,2,32323,3,3,232,5,45,425,4,54,54,5,4,2131,9,1,8,2};
+      Main.sort(arr,arr.length);
+for(int i:arr){
+    System.out.print(i+",");
+}
+    }
+}

@@ -1,0 +1,51 @@
+public class Main6 {
+    // 求解两个字符号的最长公共子串
+    public static String maxSubstring(String strOne, String strTwo){
+        if(strOne==null||strTwo==null){
+            return null;
+        }
+        String max=null;
+        String min=null;
+        if(strOne.length()>strTwo.length()){
+            max=strOne;
+             min=strTwo;
+        }else{
+            max=strTwo;
+            min=strOne;
+        }
+        String key=null;
+        for(int i=0;i<min.length();i++)
+            for(int begin=0,end=min.length()-i;end<=min.length();begin++,end++){
+                key=min.substring(begin,end);//从最大的开始的
+                if(max.contains(key)){
+                    return key;
+                }
+            }
+            return null;
+    }
+
+    public static void main(String[] args) {
+        int a[]={1,2,3,4};
+        int b[]={2,3,1,4,6};
+
+        String strOne = "e-fgabcd";
+        String strTwo = "adefgwgeweg";
+        StringBuffer sb1=new StringBuffer();
+        StringBuffer sb2=new StringBuffer();
+       for(int i=0;i<a.length;i++){
+           sb1.append(a[i]);
+       }
+        for(int i=0;i<b.length;i++){
+            sb2.append(b[i]);
+        }
+
+        String result = Main6.maxSubstring(sb1.toString(), sb2.toString());
+       int arr[]=new int[result.length()];
+       for(int i=0;i<arr.length;i++){
+           arr[i]=Integer.valueOf(result.substring(i,i+1));
+           System.out.println(arr[i]);
+       }
+        System.out.println(result);
+    }
+
+}

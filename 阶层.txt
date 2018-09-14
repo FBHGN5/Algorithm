@@ -1,0 +1,16 @@
+public class Main {
+    public static long fac(long m){
+        if(m==1||m==0){
+            return 1;
+        }else{
+            return m*fac(m-1);
+        }
+    }
+    public static long C(long i,long j){
+       return fac(j)/(fac(i)*fac(j-i));
+    }
+   public static void main(String[] args) {
+
+       System.out.println( C(111,2111));
+   }
+}
