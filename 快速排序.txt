@@ -1,0 +1,30 @@
+public class quick_sort{
+    public static void QuickSort(int[] arr,int start,int end){
+        int mid=arr[start];
+        int low=start;
+        int high=end;
+        if(low>=high)
+            return;
+        while(low<high){
+            while(arr[high]>=mid&&low<high){//highÍùÇ°ÃæÒÆ¶¯
+                high--;
+            }
+            arr[low]=arr[high];
+            while(arr[low]<=mid&&low<high){
+                low++;
+            }
+            arr[high]=arr[low];
+
+        }
+
+        arr[low]=mid;
+        QuickSort(arr,start,low-1);
+        QuickSort(arr,low+1,end);
+    }
+    public static void main(String[] args){
+        int a[]={38,65,97,76,13,27,49};
+        QuickSort(a,0,6);
+        for(int n:a)
+            System.out.print(n+",");
+    }
+}
