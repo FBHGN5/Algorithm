@@ -41,17 +41,17 @@ public class Sort {
 
     //≤Â»Î≈≈–Ú
     public void insert(int a[]) {
-       int j=0;
-       for(int i=1;i<a.length;i++){
-           int key=a[i];
-           for(j=i-1;j>=0;j--){
-               if(a[j]>key){
-                   a[j+1]=a[j];
-               }else break;
-           }
-           a[j+1]=key;
-       }
-       for (int i : a) {
+        int j=0;
+        for(int i=1;i<a.length;i++){
+            int key=a[i];
+            for(j=i-1;j>=0;j--){
+                if(a[j]>key){
+                    a[j+1]=a[j];
+                }else break;
+            }
+            a[j+1]=key;
+        }
+        for (int i : a) {
             System.out.print(i + " ");
         }
     }
@@ -71,7 +71,7 @@ public class Sort {
             }
             a[low]=a[high];
             while(low<high&&a[low]<=key){
-                
+
                 low++;
             }
             a[high]=a[low];
