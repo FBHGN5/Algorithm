@@ -1,0 +1,93 @@
+package org.zjl.sort;
+
+public class Sort {
+    //√∞≈›≈≈–Ú
+    public void maopao(int a[]) {
+        boolean flag = true;
+        int length = a.length;
+        while (flag) {
+            flag = false;
+            for (int i = 1; i < length; i++) {
+                if (a[i - 1] > a[i]) {
+                    int temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                    flag = true;
+                }
+
+            }
+            length--;
+        }
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
+    }
+
+    //—°‘Ò≈≈–Ú
+    public void choose(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[j] < a[i]) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
+    }
+
+    //≤Â»Î≈≈–Ú
+    public void insert(int a[]) {
+       int j=0;
+       for(int i=1;i<a.length;i++){
+           int key=a[i];
+           for(j=i-1;j>=0;j--){
+               if(a[j]>key){
+                   a[j+1]=a[j];
+               }else break;
+           }
+           a[j+1]=key;
+       }
+       for (int i : a) {
+            System.out.print(i + " ");
+        }
+    }
+    //øÏÀŸ≈≈–Ú
+    public void quick(int a[],int start,int end){
+        int key=a[start];
+        int low=start;
+        int high=end;
+        if(low>=high){
+            return;
+        }
+        while(low<high){
+            while(low<high&&a[high]>=key){
+
+                high--;
+
+            }
+            a[low]=a[high];
+            while(low<high&&a[low]<=key){
+                
+                low++;
+            }
+            a[high]=a[low];
+        }
+        a[low]=key;
+        quick(a,start,low-1);
+        quick(a,low+1,end);
+
+    }
+
+    public static void main(String[] args) {
+        int a[] = {38, 65, 97, 76, 13, 27, 49};
+        Sort s = new Sort();
+        s.quick(a,0,a.length-1);
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
+    }
+}
