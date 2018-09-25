@@ -1,7 +1,7 @@
-package org.zjl.sort;
+ï»¿package org.zjl.sort;
 
 public class Sort {
-    //Ã°ÅİÅÅĞò
+    //å†’æ³¡æ’åº
     public void maopao(int a[]) {
         boolean flag = true;
         int length = a.length;
@@ -23,7 +23,7 @@ public class Sort {
         }
     }
 
-    //Ñ¡ÔñÅÅĞò
+    //é€‰æ‹©æ’åº
     public void choose(int a[]) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
@@ -39,7 +39,7 @@ public class Sort {
         }
     }
 
-    //²åÈëÅÅĞò
+    //æ’å…¥æ’åº
     public void insert(int a[]) {
         int j=0;
         for(int i=1;i<a.length;i++){
@@ -55,7 +55,7 @@ public class Sort {
             System.out.print(i + " ");
         }
     }
-    //¿ìËÙÅÅĞò
+    //å¿«é€Ÿæ’åº
     public void quick(int a[],int start,int end){
         int key=a[start];
         int low=start;
